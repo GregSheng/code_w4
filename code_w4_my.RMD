@@ -30,7 +30,7 @@ gender_data <- read.csv("C:/Users/User/Desktop/CASA0005 GIS/R_study/ass4/Data/HD
 World_Countries <-st_read ("C:/Users/User/Desktop/CASA0005 GIS/R_study/ass4/Data/World_Countries_Generalized/World_Countries_Generalized.shp")
 
 ```
-## Handling data
+## manipulate data
 ```{r}
 cleaned_gender_data <- gender_data %>%
   select(country, iso3, gii_2019, gii_2010) %>%
