@@ -1,0 +1,50 @@
+---
+title: "Home Work 04"
+author: "Greg Sheng"
+date: "2023-11-12"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+setwd("C:/Users/User/Desktop/CASA0005 GIS/R_study/ass4")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load lobraries
+```{r}
+library(readr)
+library(dplyr)
+library(sf)  # for read shp file
+```
+
+
+## Read the global gender inequality data
+
+```{r}
+gender_data <- read.csv("C:/Users/User/Desktop/CASA0005 GIS/R_study/ass4/Data/HDR21-22_Composite_indices_complete_time_series.csv")
+
+```
+
+## Read shp file
+```{r}
+World_Countries <-st_read ("C:/Users/User/Desktop/CASA0005 GIS/R_study/ass4/Data/World_Countries_Generalized/World_Countries_Generalized.shp")
+
+```
+## Handling data
+```{r}
+cleaned_gender_data <- gender_data %>%
+  select(country, iso3, gii_2019, gii_2010) %>%
+  mutate(difference = gii_2019 - gii_2010) %>%
+  drop_na() %>%
+  left_join(.,World_Countries, by=c("country" = "COUNTRY"))
+
+head(cleaned_gender_data)
+```
+
+
+
+
+
+
+
+
