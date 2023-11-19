@@ -1,0 +1,243 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Home Work 04},
+  pdfauthor={Greg Sheng},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Home Work 04}
+\author{Greg Sheng}
+\date{2023-11-12}
+
+\begin{document}
+\maketitle
+
+\hypertarget{load-lobraries}{%
+\subsection{Load lobraries}\label{load-lobraries}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(readr)}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## 载入程辑包：'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(sf)  }\CommentTok{\# for read shp file}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Linking to GEOS 3.11.2, GDAL 3.6.2, PROJ 9.2.0; sf_use_s2() is TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+## v forcats   1.0.0     v stringr   1.5.0
+## v ggplot2   3.4.4     v tibble    3.2.1
+## v lubridate 1.9.3     v tidyr     1.3.0
+## v purrr     1.0.2
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+## i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+\end{verbatim}
+
+\hypertarget{read-the-global-gender-inequality-data}{%
+\subsection{Read the global gender inequality
+data}\label{read-the-global-gender-inequality-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gender\_data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"C:/Users/User/Desktop/CASA0005 GIS/R\_study/ass4/Data/HDR21{-}22\_Composite\_indices\_complete\_time\_series.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{read-shp-file}{%
+\subsection{Read shp file}\label{read-shp-file}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{World\_Countries }\OtherTok{\textless{}{-}}\FunctionTok{st\_read}\NormalTok{ (}\StringTok{"C:/Users/User/Desktop/CASA0005 GIS/R\_study/ass4/Data/World\_Countries\_Generalized/World\_Countries\_Generalized.shp"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Reading layer `World_Countries_Generalized' from data source 
+##   `C:\Users\User\Desktop\CASA0005 GIS\R_study\ass4\Data\World_Countries_Generalized\World_Countries_Generalized.shp' 
+##   using driver `ESRI Shapefile'
+## Simple feature collection with 251 features and 7 fields
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: -180 ymin: -89 xmax: 180 ymax: 83.6236
+## Geodetic CRS:  WGS 84
+\end{verbatim}
+
+\hypertarget{manipulate-data}{%
+\subsection{manipulate data}\label{manipulate-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cleaned\_gender\_data }\OtherTok{\textless{}{-}}\NormalTok{ gender\_data }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(country, iso3, gii\_2019, gii\_2010) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{difference =}\NormalTok{ gii\_2019 }\SpecialCharTok{{-}}\NormalTok{ gii\_2010) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{drop\_na}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{left\_join}\NormalTok{(.,World\_Countries, }\AttributeTok{by=}\FunctionTok{c}\NormalTok{(}\StringTok{"country"} \OtherTok{=} \StringTok{"COUNTRY"}\NormalTok{))}
+
+\FunctionTok{head}\NormalTok{(cleaned\_gender\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                country iso3 gii_2019 gii_2010 difference FID ISO
+## 1          Afghanistan  AFG    0.665    0.753     -0.088   1  AF
+## 2               Angola  AGO    0.537    0.551     -0.014   6  AO
+## 3              Albania  ALB    0.156    0.246     -0.090   2  AL
+## 4 United Arab Emirates  ARE    0.056    0.175     -0.119 237  AE
+## 5            Argentina  ARG    0.306    0.364     -0.058  10  AR
+## 6              Armenia  ARM    0.239    0.346     -0.107  11  AM
+##             COUNTRYAFF AFF_ISO SHAPE_Leng SHAPE_Area
+## 1          Afghanistan      AF  50.803210  62.566714
+## 2               Angola      AO  58.873470 103.813059
+## 3              Albania      AL   9.625038   3.073540
+## 4 United Arab Emirates      AE  16.759676   6.239850
+## 5            Argentina      AR 138.751348 278.308965
+## 6              Armenia      AM  12.161117   3.142291
+##                         geometry
+## 1 MULTIPOLYGON (((61.27655 35...
+## 2 MULTIPOLYGON (((23.47611 -1...
+## 3 MULTIPOLYGON (((19.57083 41...
+## 4 MULTIPOLYGON (((56.36027 25...
+## 5 MULTIPOLYGON (((-71.85916 -...
+## 6 MULTIPOLYGON (((46.54037 38...
+\end{verbatim}
+
+\end{document}

@@ -2,7 +2,9 @@
 title: "Home Work 04"
 author: "Greg Sheng"
 date: "2023-11-12"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -15,6 +17,9 @@ knitr::opts_chunk$set(echo = TRUE)
 library(readr)
 library(dplyr)
 library(sf)  # for read shp file
+library(tidyverse)
+
+
 ```
 
 
@@ -25,12 +30,16 @@ gender_data <- read.csv("C:/Users/User/Desktop/CASA0005 GIS/R_study/ass4/Data/HD
 
 ```
 
-## Read shp file
+
+## Read world countries shp file
+
 ```{r}
 World_Countries <-st_read ("C:/Users/User/Desktop/CASA0005 GIS/R_study/ass4/Data/World_Countries_Generalized/World_Countries_Generalized.shp")
 
 ```
+
 ## manipulate data
+
 ```{r}
 cleaned_gender_data <- gender_data %>%
   select(country, iso3, gii_2019, gii_2010) %>%
@@ -39,11 +48,39 @@ cleaned_gender_data <- gender_data %>%
   left_join(.,World_Countries, by=c("country" = "COUNTRY"))
 
 head(cleaned_gender_data)
+
 ```
 
+### Code Learning Note
+
+## Load lobraries
+library(readr)
+library(dplyr)
+library(sf)  # for read shp file
+library(tidyverse)
 
 
 
+# Read csv
+name read data <- read.csv("C:/ file_location/file_name.csv")
+
+# Read read shp
+name data  <-st_read ("C:/ file_location/file_name.shp")
+
+
+# clean data :
+name clean data  <- gender_data %>%
+
+# select data
+select(select data columns ie ax, bx, cx) %>% 
+# mutate data
+mutate(difference = gii_2019 - gii_2010) %>%
+# drop data
+drop_na() %>%
+# join data
+left_join(.,World_Countries, by=c("country" = "COUNTRY"))
+# display data
+head(data file name)
 
 
 
